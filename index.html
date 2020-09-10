@@ -8,9 +8,9 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
     
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/fontawesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
         <link href="css/styles.css" rel="stylesheet">
         <title>Ristorante Con Fusion</title>
 </head>
@@ -29,9 +29,51 @@
                 <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
                 <li class="nav-item"><a class="nav-link" href="contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
             </ul>
+            <span class="navbar-text">
+                <a data-toggle="modal" data-target="#loginModal">
+                <span class="fa fa-sign-in"></span> Login</a>
+            </span>
             </div>            
     </div>
 </nav>
+
+<div id="loginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="content">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Login </h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                                <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label class="sr-only" for="exampleInputPassword3">Password</label>
+                            <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
+                        </div>
+                        <div class="col-sm-auto">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox">
+                                <label class="form-check-label"> Remember me
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <button type="submit" class="btn btn-primary btn-sm ml-auto">Sign in</button>  
+                        <button type="button" class="btn btn-secondary btn-sm ml-1" data-dismiss="modal">Cancel</button>                              
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
@@ -40,10 +82,12 @@
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <img src="img/WeChat.jpg" class="img-fluid">
+                    <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col align-self-center">
-                    <a class="btn btn-warning" href="#reserve-table" role="button">Reserve Table</a>
+                    <a role="button" class="btn btn-block nav-link btn-warning"
+                        data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>"
+                        data-placement="bottom" href="#reserveform">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -88,8 +132,6 @@
             </div>
             <div class="col col-sm order-sm-first col-md">
                 <div class="media">
-                    <img class="d-flex mr-3 img-thumbnail align-self-center"
-                            src="img/alberto.png" alt="Alberto Somayya">
                     <div class="media-body">
                         <h2 class="mt-0">Alberto Somayya</h2>
                         <h4>Executive Chef</h4>
@@ -188,9 +230,14 @@
         </div>
     </footer>
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
-    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 </body>
 
 </html>
